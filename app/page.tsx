@@ -1,3 +1,4 @@
+"use client";
 import Particles from "@/components/base/particles";
 import config from "@/config/config.mjs";
 import { OmitDashboardContext } from "@/types/global";
