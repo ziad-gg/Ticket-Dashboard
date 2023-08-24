@@ -9,10 +9,6 @@ import InfoContext from '@/context/useInfo'
 import Header from '@/components/Header';
 import Loading from "@/components/base/loading";
 
-export const metadata: Metadata = {
-  title: 'Dashboard',
-}
-
 const getData = async (): Promise<DashboardContext> => {
   const request = await fetch(config.api("metadata"), {
     cache: 'reload',
