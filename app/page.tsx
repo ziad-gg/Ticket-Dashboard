@@ -1,4 +1,3 @@
-"use client";
 import Particles from "@/components/base/particles";
 import config from "@/config/config.mjs";
 import { OmitDashboardContext } from "@/types/global";
@@ -7,7 +6,6 @@ import Link from "next/link";
 
 async function getData(): Promise<OmitDashboardContext> {
     const res = await fetch(config.api('metadata'), {
-        cache: 'no-store',
         next: {
             revalidate: 5
         }
