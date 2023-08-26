@@ -7,8 +7,9 @@ import Link from "next/link";
 
 async function getData(): Promise<OmitDashboardContext> {
     const res = await fetch(config.api('metadata'), {
+        cache: 'no-store',
         next: {
-            revalidate: 0
+            revalidate: 5
         }
     });
 
@@ -31,8 +32,7 @@ export default async function Home() {
                     <h2 className="text-white font-bold text-xl ">{data.username}</h2>
                 </div>
                 <div className="w-full h-[25rem] flex flex-col justify-center items-center">
-                    <Link href="/auth/login" className="bg-gray-700 w-[70%] h-[15%] flex justify-center items-center font-bold text-white text-2xl">Login</Link>
-               
+                    <Link href="/dashboard" className="bg-gray-700 w-[70%] h-[15%] flex justify-center items-center font-bold text-white text-2xl">Dashboard</Link>
                 </div>
             </div>
         </div>
